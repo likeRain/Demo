@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSVideoPlayWithControlView">
+            <connections>
+                <outlet property="playBtn" destination="Dk0-VX-62f" id="oPR-Fd-Xff"/>
+                <outlet property="playSlider" destination="kCg-GD-nnY" id="Bhg-HF-As0"/>
+                <outlet property="timeLabel" destination="5ov-8A-dAv" id="Xqx-fe-GA3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ov-8A-dAv">
+                    <rect key="frame" x="200" y="156" width="114" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="114" id="Klz-NL-5Ft"/>
+                        <constraint firstAttribute="height" constant="22" id="guM-Ru-0RJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dk0-VX-62f">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="ds_dubbing_button_play"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VjL-k8-K30" userLabel="click Button">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                    <connections>
+                        <action selector="onPlayBtn:" destination="-1" eventType="touchUpInside" id="DcU-hO-O2i"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svW-4i-79P" userLabel="preback">
+                    <rect key="frame" x="0.0" y="178" width="2" height="2"/>
+                    <color key="backgroundColor" red="0.99215686274509807" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="Ig1-uN-5VM"/>
+                        <constraint firstAttribute="height" constant="2" id="rz3-r5-cFu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kN-Lq-mVU" userLabel="sufback">
+                    <rect key="frame" x="320" y="178" width="0.0" height="2"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="0.5" id="B2i-Cx-iMo"/>
+                        <constraint firstAttribute="height" constant="2" id="naP-yS-cI8"/>
+                    </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-GD-nnY">
+                    <rect key="frame" x="-2" y="163" width="324" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="xyt-t6-sLB"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onSliderChanged:" destination="-1" eventType="valueChanged" id="cZa-aj-PBa"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Dk0-VX-62f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0KI-ip-pvh"/>
+                <constraint firstItem="kCg-GD-nnY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="0.5" id="6KN-Tn-ok3"/>
+                <constraint firstAttribute="trailing" secondItem="VjL-k8-K30" secondAttribute="trailing" id="EKX-JK-iP9"/>
+                <constraint firstAttribute="bottom" secondItem="kCg-GD-nnY" secondAttribute="bottom" constant="-13" id="M5D-hb-2VC"/>
+                <constraint firstItem="kCg-GD-nnY" firstAttribute="top" secondItem="VjL-k8-K30" secondAttribute="bottom" id="Om7-xV-bJb"/>
+                <constraint firstItem="6kN-Lq-mVU" firstAttribute="bottom" secondItem="kCg-GD-nnY" secondAttribute="bottom" constant="-13" id="St2-75-1NO"/>
+                <constraint firstAttribute="trailing" secondItem="6kN-Lq-mVU" secondAttribute="trailing" id="TVC-aV-gMh"/>
+                <constraint firstAttribute="trailing" secondItem="5ov-8A-dAv" secondAttribute="trailing" constant="6" id="Zv4-Dv-txp"/>
+                <constraint firstItem="svW-4i-79P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cjL-5Z-CEf"/>
+                <constraint firstItem="VjL-k8-K30" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g7w-F0-eZk"/>
+                <constraint firstAttribute="trailing" secondItem="Dk0-VX-62f" secondAttribute="trailing" id="geN-IQ-iLK"/>
+                <constraint firstItem="VjL-k8-K30" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h2g-k0-gIS"/>
+                <constraint firstItem="Dk0-VX-62f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oPa-gu-b2L"/>
+                <constraint firstAttribute="bottom" secondItem="5ov-8A-dAv" secondAttribute="bottom" constant="2" id="oq9-dv-wbO"/>
+                <constraint firstAttribute="bottom" secondItem="Dk0-VX-62f" secondAttribute="bottom" id="pS2-xb-fgJ"/>
+                <constraint firstAttribute="trailing" secondItem="kCg-GD-nnY" secondAttribute="trailing" constant="0.5" id="r3B-Kx-glj"/>
+                <constraint firstItem="svW-4i-79P" firstAttribute="bottom" secondItem="kCg-GD-nnY" secondAttribute="bottom" constant="-13" id="sCq-cx-VHK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="496" y="263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ds_dubbing_button_play" width="71" height="71"/>
+    </resources>
+</document>
